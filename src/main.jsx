@@ -300,16 +300,14 @@ function App() {
                 <span className="fallback-subtitle">TMT & PIPES</span>
               </div>
             </div>
-          </div>
-          <div className="header-badge">
-            <span className="badge-pill">Vendor Registration Portal</span>
+            <h1 className="header-brand-title">SAGAR TMT AND PIPES</h1>
           </div>
         </div>
       </header>
 
       <div className="form-container">
         <div className="intro-block">
-          <h1>Register as a Trusted Partner</h1>
+          <h2>Register as a Trusted Partner</h2>
         </div>
 
         {submitSuccess && (
@@ -332,7 +330,8 @@ function App() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="registration-form" noValidate>
+        {!submitSuccess && (
+          <form onSubmit={handleSubmit} className="registration-form" noValidate>
           {/* Section 1: Business Identity */}
           <div className="form-section">
             <div className="section-title">
@@ -610,7 +609,8 @@ function App() {
               )}
             </button>
           </div>
-        </form>
+          </form>
+        )}
       </div>
     </main>
   );
