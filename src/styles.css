@@ -303,10 +303,11 @@ body {
 
 .form-section {
   background: var(--card-bg);
-  border: 2px solid #b91c1c; /* Dark red border */
+  border: 2px solid #ef4444; /* Fallback border */
   padding: 32px;
   border-radius: 16px;
   box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  animation: rainbow-border-section 8s linear infinite;
 }
 
 .section-title {
@@ -384,7 +385,6 @@ body {
   padding: 14px 14px 14px 44px;
   outline: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: rainbow-border 8s linear infinite;
 }
 
 .input-control input::placeholder {
@@ -392,7 +392,8 @@ body {
 }
 
 .input-control input:focus {
-  animation: rainbow-border-focus 4s linear infinite;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.15);
   background: #ffffff;
 }
 
@@ -419,6 +420,17 @@ body {
   70% { border-color: #3b82f6; box-shadow: 0 0 3px rgba(59, 130, 246, 0.15); }
   84% { border-color: #a855f7; box-shadow: 0 0 3px rgba(168, 85, 247, 0.15); }
   100% { border-color: #ef4444; box-shadow: 0 0 3px rgba(239, 68, 68, 0.15); }
+}
+
+@keyframes rainbow-border-section {
+  0% { border-color: #ef4444; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(239, 68, 68, 0.15); }
+  14% { border-color: #f97316; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(249, 115, 22, 0.15); }
+  28% { border-color: #eab308; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(234, 179, 8, 0.15); }
+  42% { border-color: #22c55e; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(34, 197, 94, 0.15); }
+  56% { border-color: #06b6d4; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(6, 182, 212, 0.15); }
+  70% { border-color: #3b82f6; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(59, 130, 246, 0.15); }
+  84% { border-color: #a855f7; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(168, 85, 247, 0.15); }
+  100% { border-color: #ef4444; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05), 0 0 12px rgba(239, 68, 68, 0.15); }
 }
 
 @keyframes rainbow-border-focus {
